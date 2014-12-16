@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Proyecto</title>
+	<title>Blog</title>
 	<meta http-equiv="Content-Language" content="German" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="/static/css/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
 </head>
 <body>
 <div id="wrap">
 	<div id="header">
 		<div id="headerlinks">
-		<a href="#" title="Portfolio">Portfolio</a>
 		<a href="#" title="Blog">Blog</a>
-		<a href="#" title="About Us">About Us</a>
-		<a href="#" title="Contact">Contact</a>
+		<a href="#" title="Contacto">Contacto</a>
+		<a href="../login/" title="Login">Iniciar sesión</a>
 		</div>
 		<h1><a href="#">Proyecto</a></h1>
 	</div>
 
 	<div id="sidebar">
-		<h2>Last Posts:</h2>
+		<h2>Últimos posts:</h2>
 		<div class="box">
 		<ul>
-		<li><a href="#">Hello World</a></li>
-		<li><a href="#">All starts here</a></li>
-		<li><a href="#">Whatever</a></li>
-		<li><a href="#">Simple Build</a></li>
-		<li><a href="#">Testing</a></li>
+		{% extends 'sidebar.html' %}
 		</ul>
 		</div>
 
-		<h2>Archive:</h2>
+		<h2>Categorías:</h2>
 		<div class="box">
 		<ul>
-		<li><a href="#">January</a></li>
-		<li><a href="#">February</a></li>
+		<li><a href="/category/1/">Cultura</a></li>
+		<li><a href="/category/2/">Informática</a></li>
+		<li><a href="/category/3/">Economía</a></li>
 		</ul>
 		</div>
 
 		<h2>Sponsors:</h2>
 		<div class="box">
 		<ul>
-		<li><a href="#">Franklabs</a></li>
-		<li><a href="#">Django</a></li>
+		<li><a href="http://www.franklabs.biz/">Franklabs</a></li>
+		<li><a href="https://www.djangoproject.com/">Django</a></li>
 		</ul>
 		</div>
 	</div>
 
-{% block content %} {% endblock %}
+{% block content %} {% endblock content %}
 
 	<div id="footer">
 		<div style="float: right;">
-		<a href="#" title="Contact Us"><img src="/static/img/contact.gif" alt="Contact" /></a>
-		<a href="#" title="Sitemap"><img src="/static/img/sitemap.gif" alt="Sitemap" /></a>
-		<a href="#" title="Rss Feed"><img src="/static/img/rss.png" alt="Rss Feed" /></a>
+		<a href="#" title="Contact Us"><img src="img/contact.gif" alt="Contact" /></a>
+		<a href="#" title="Sitemap"><img src="img/sitemap.gif" alt="Sitemap" /></a>
+		<a href="#" title="Rss Feed"><img src="img/rss.png" alt="Rss Feed" /></a>
 		</div>
 		Theme #4 &copy; 2013 | <!-- You can use it for practically any personal or commercial use so long as you keep our footer credit links intact. -->Theme by <a target="_blank" href="http://codingdev.de" title="CodingDev">CodingDev</a>
 	</div>

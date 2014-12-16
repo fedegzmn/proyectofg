@@ -1,3 +1,4 @@
 from django.contrib import admin
+from autor.models import ProfileAuthor
 
-# Register your models here.
+admin.site.register(ProfileAuthor)

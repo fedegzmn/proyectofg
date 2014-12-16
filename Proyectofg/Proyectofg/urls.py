@@ -6,10 +6,11 @@ urlpatterns = patterns('',
     # url(r'^$', 'Proyectofg.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^$', 'post.views.home', name='home'),
+    #url(r'^$', 'post.views.home', name='home'),
+    url(r'^', include('post.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login/', 'django.contrib.auth.views.login'),
+    url(r'^login/$', 'post.views.login', name='login'),
     url(r'^write_post/$', 'post.views.write_post', name='write_new_post'),    
 )
 

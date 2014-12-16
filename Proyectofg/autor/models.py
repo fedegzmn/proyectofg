@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 
 class ProfileAuthor(models.Model):
     user = models.ForeignKey(User)
-    descripcion = models.TextField(max_length=180)
+    nombre = models.CharField(max_length=50)
+    descripcion = models.TextField(max_length=200)
 
     def __unicode__(self):
-        return "%s" % (self.user.get_full_name(),)
+        return "%s" % (self.nombre,)
