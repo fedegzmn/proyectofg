@@ -4,34 +4,36 @@
 	<title>Blog</title>
 	<meta http-equiv="Content-Language" content="German" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" media="screen" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
 </head>
 <body>
 <div id="wrap">
 	<div id="header">
 		<div id="headerlinks">
-		<a href="#" title="Blog">Blog</a>
-		<a href="#" title="Contacto">Contacto</a>
-		<a href="../login/" title="Login">Iniciar sesión</a>
+		<a href="/index/" title="Blog">Blog</a>
+		<a href="/write_post/" title="Escribir post">Escribir post</a>
+		<a href="/login/" title="Login">Iniciar sesión</a>
 		</div>
-		<h1><a href="#">Proyecto</a></h1>
+		<h1><a href="#">Blog</a></h1>
 	</div>
 
 	<div id="sidebar">
 		<h2>Últimos posts:</h2>
 		<div class="box">
 		<ul>
-		{% extends 'sidebar.html' %}
+		{% for post in lastposts|slice:":10" %}
+		<li><a href="/post/{{ post.id }}/">{{ post.title }}</a></li>
+		{% endfor %}
 		</ul>
 		</div>
 
 		<h2>Categorías:</h2>
 		<div class="box">
-		<ul>
-		<li><a href="/category/1/">Cultura</a></li>
-		<li><a href="/category/2/">Informática</a></li>
-		<li><a href="/category/3/">Economía</a></li>
+		<ul>		
+		{% for categoria in cat %}		
+		<li><a href="/category/{{ categoria.id }}/">{{ categoria.name }}</a></li>
+		{% endfor %}
 		</ul>
 		</div>
 
@@ -48,9 +50,9 @@
 
 	<div id="footer">
 		<div style="float: right;">
-		<a href="#" title="Contact Us"><img src="img/contact.gif" alt="Contact" /></a>
-		<a href="#" title="Sitemap"><img src="img/sitemap.gif" alt="Sitemap" /></a>
-		<a href="#" title="Rss Feed"><img src="img/rss.png" alt="Rss Feed" /></a>
+		<a href="#" title="Contact Us"><img src="{{STATIC_URL}}img/contact.gif" alt="Contact" /></a>
+		<a href="#" title="Sitemap"><img src="{{STATIC_URL}}img/sitemap.gif" alt="Sitemap" /></a>
+		<a href="#" title="Rss Feed"><img src="{{STATIC_URL}}img/rss.png" alt="Rss Feed" /></a>
 		</div>
 		Theme #4 &copy; 2013 | <!-- You can use it for practically any personal or commercial use so long as you keep our footer credit links intact. -->Theme by <a target="_blank" href="http://codingdev.de" title="CodingDev">CodingDev</a>
 	</div>

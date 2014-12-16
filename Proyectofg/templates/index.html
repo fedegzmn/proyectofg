@@ -2,8 +2,9 @@
 {% block content %}
     
     {% for post in posts %}
-	<h2>{{ post.title }}<span class="post-span">- por {{ post.author }} - {{ post.date_posted }}</span></h2>
+	<h2><a href="/post/{{ post.id }}/">{{ post.title }}</a><span class="post-span">- por {{ post.author }} - {{ post.date_posted }}</span></h2>
 	<p>{{ post.message }}</p>
+	<br>
     {% endfor %}
 
 {% endblock %}

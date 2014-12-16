@@ -13,4 +13,8 @@ urlpatterns = patterns('',
          r'^$',
          'post.views.home',
          name='home'),
+    url(
+        r'^index/',
+        'post.views.home',
+        name='home'),    
 )

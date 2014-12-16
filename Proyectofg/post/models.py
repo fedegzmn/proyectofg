@@ -3,8 +3,6 @@ from django.db import models
 from autor.models import ProfileAuthor
 
 
-# Create your models here.
-
 class Category(models.Model):
     name = models.CharField(max_length=200)
     def __unicode__(self):
